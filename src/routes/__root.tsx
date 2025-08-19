@@ -1,7 +1,13 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import type { IUserAuth } from '@/hooks/useAuth';
+import { createRootRouteWithContext, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 
-export const Route = createRootRoute({
+interface RouterContext {
+    auth: IUserAuth; // user islogin
+}
+
+// user islogin
+export const Route = createRootRouteWithContext<RouterContext>()({
   component: () => (
     <>
       <div className="p-2 flex gap-2">

@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { userAppRouter } from './hooks/useAppRouter'
 
 function App() {
-  return <div className='bg-red-500'>ok</div>
+  const { AppRouterProvider } = userAppRouter();
+  return <AppRouterProvider />
 }
 
 export default App
