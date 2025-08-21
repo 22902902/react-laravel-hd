@@ -20,5 +20,15 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     }
+  },
+  // 配置代理
+  server: {
+    proxy: {
+      "/hd": {
+        target: "http://hdedu.test",
+        changeOrigin: true,
+        //rewrite: (path) => path.replace(/^\/hd/, "")
+      }
+    }
   }
 })
